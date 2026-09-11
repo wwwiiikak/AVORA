@@ -1,4 +1,4 @@
-name: Build AVORA APK
+name: Build avora APK
 
 on:
   workflow_dispatch:
