@@ -194,7 +194,7 @@ class _BookingPageState extends State<BookingPage> {
         'order_number': resi,
         'pickup_address': pickup.text.trim(),
         'destination_address': destination.text.trim(),
-        'package_type': 'Paket',
+        'package_type': 'package',
         'weight_kg': weight,
         'vehicle_type': vehicle,
         'service_type': service,
