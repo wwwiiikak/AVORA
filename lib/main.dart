@@ -191,6 +191,7 @@ class _BookingPageState extends State<BookingPage> {
       final resi = 'AVR${DateTime.now().millisecondsSinceEpoch.toString().substring(5)}';
       final row = await supabase.from('orders').insert({
         'customer_id': user.id,
+        'order_number': resi,
         'pickup_address': pickup.text.trim(),
         'destination_address': destination.text.trim(),
         'package_type': type.text.trim().isEmpty ? 'Paket' : type.text.trim(),
