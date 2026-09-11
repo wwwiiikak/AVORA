@@ -1,15 +1,30 @@
 # AVORA Cargo
-Aplikasi cargo & delivery untuk Kutai Barat yang dirancang untuk berkembang ke wilayah lain.
 
-## Struktur awal
-- `lib/` — aplikasi Flutter MVP
-- `docs/` — rancangan fitur
-- `assets/` — tempat logo/gambar
+Fondasi aplikasi AVORA Cargo & Delivery untuk Kutai Barat dan pengembangan wilayah lain.
 
-## Menjalankan
-1. Install Flutter.
-2. Jalankan `flutter create .` di folder ini untuk membuat file platform yang belum ada.
-3. Jalankan `flutter pub get`.
-4. Jalankan `flutter run`.
+## Tahap 2
+Versi ini berisi prototipe customer app yang sudah memiliki:
+- Beranda AVORA
+- Pesan pengiriman
+- Pickup & tujuan
+- Jenis barang
+- Berat barang
+- Pilihan motor / mobil
+- Estimasi tarif
+- Pembuatan nomor resi
+- Riwayat pesanan dasar
+- Tracking status dasar
+- Profil pelanggan
 
-Versi ini adalah fondasi UI/MVP. Backend, login nyata, database, pembayaran, GPS realtime, notifikasi, dan build APK produksi akan ditambahkan pada tahap berikutnya.
+## Cara menjalankan
+1. Pastikan Flutter SDK sudah terpasang.
+2. Jalankan `flutter pub get`.
+3. Jalankan `flutter run`.
+
+Untuk membuat APK release:
+`flutter build apk --release`
+
+Untuk Play Store, Flutter merekomendasikan App Bundle:
+`flutter build appbundle`
+
+Dokumentasi resmi Flutter: https://docs.flutter.dev/deployment/android
