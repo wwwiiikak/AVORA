@@ -222,7 +222,7 @@ class _BookingPageState extends State<BookingPage> {
     const SizedBox(height: 12),
     TextField(controller: type, decoration: const InputDecoration(labelText: 'Jenis barang', border: OutlineInputBorder())),
     const SizedBox(height: 12),
-    Card(child: Padding(padding: const EdgeInsets.all(14), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Berat: ${weight.toStringAsFixed(1)} kg'), Slider(value: weight, min: .5, max: 30, divisions: 59, onChanged: (v) { setState(() { weight = v; estimate = localEstimate(); }); loadTariff(); })])),
+    Card(child: Padding(padding: const EdgeInsets.all(14), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Berat: ${weight.toStringAsFixed(1)} kg'), Slider(value: weight, min: .5, max: 30, divisions: 59, onChanged: (v) { setState(() { weight = v; estimate = localEstimate(); }); loadTariff(); })]))),
     const SizedBox(height: 8),
     SegmentedButton<String>(segments: const [ButtonSegment(value: 'motor', icon: Icon(Icons.two_wheeler), label: Text('Motor')), ButtonSegment(value: 'mobil', icon: Icon(Icons.directions_car), label: Text('Mobil'))], selected: {vehicle}, onSelectionChanged: (s) { setState(() => vehicle = s.first); loadTariff(); }),
     const SizedBox(height: 12),
@@ -248,7 +248,7 @@ class _OrdersTabState extends State<OrdersTab> {
     if (s.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator());
     if (s.hasError) return Center(child: Text('Gagal memuat pesanan: ${s.error}'));
     final orders = s.data ?? []; if (orders.isEmpty) return const Center(child: Text('Belum ada pesanan.'));
-    return ListView.builder(padding: const EdgeInsets.all(18), itemCount: orders.length, itemBuilder: (_, i) { final o = orders[i]; return Card(child: ListTile(leading: Icon(o['vehicle_type'] == 'mobil' ? Icons.directions_car : Icons.two_wheeler), title: Text(o['resi'] ?? '-'), subtitle: Text('${o['pickup_address']}\n→ ${o['destination_address']}\nStatus: ${o['status']}'), isThreeLine: true, trailing: Text(formatRupiah((o['estimated_price'] as num?)?.toInt() ?? 0))); });
+    return ListView.builder(padding: const EdgeInsets.all(18), itemCount: orders.length, itemBuilder: (_, i) { final o = orders[i]; return Card(child: ListTile(leading: Icon(o['vehicle_type'] == 'mobil' ? Icons.directions_car : Icons.two_wheeler), title: Text(o['resi'] ?? '-'), subtitle: Text('${o['pickup_address']}\n→ ${o['destination_address']}\nStatus: ${o['status']}'), isThreeLine: true, trailing: Text(formatRupiah((o['estimated_price'] as num?)?.toInt() ?? 0)))); });
   }));
 }
 
