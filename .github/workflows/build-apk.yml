@@ -23,6 +23,10 @@ jobs:
      
       - name: Create Android project
         run: flutter create --project-name avora --platforms=android .
+      - name: Enable internet access
+        run: |
+          MANIFEST="android/app/src/main/AndroidManifest.xml"
+          grep -q 'android.permission.INTERNET' "$MANIFEST" || sed -i '/<manifest /a\    <uses-permission android:name="android.permission.INTERNET" />' "$MANIFEST"
     
       - name: Get dependencies
         run: flutter pub get
